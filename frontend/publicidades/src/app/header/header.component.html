@@ -1,0 +1,25 @@
+<header>
+    <a href=""><img src="https://embras.net/assets/images/logo.png" style="margin-left:30px; height:30px; width:90px"></a>
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/019/879/186/small/user-icon-on-transparent-background-free-png.png" style="margin-right:30px; height:30px; width:50px">
+</header>
+
+<nav>
+    <h1 style="margin-left:30px; font-size: 27px;">Gerenciamento de publicidades</h1>
+    <button class="nova-publi" id="btnNovaPubli" style="margin-right:30px;"> <span class="material-symbols-outlined" style="margin-right: 7px;">add_circle</span>Nova Publicidade</button>
+</nav>
+
+<div class="bar">
+    <form method="POST" style="all: unset; box-sizing: border-box;">
+        <select name="estadosSelect" style="margin-left:30px; border:none; background-color:#f9f9f9; padding: 10px 10px; font-size: 15px;" onchange="this.form.submit()">
+            <option value="all" name="all" style="display: flex; align-items: center;">Visualizar todos os estados</option> <span class="material-symbols-outlined" style="margin-left: 5px;">stat_minus_1</span>
+            <option value="sp" name="sp">São Paulo</option>
+            <option value="rj" name="rj">Rio de Janeiro</option>
+            <option value="mg" name="mg">Minas Gerais</option>
+        </select>
+    </form>
+        <div class="search" style=" margin-right:30px">
+            <form method="POST" style="all:unset; box-sizing: border-box;">
+                <input type="text" name="pesquisar" placeholder="Pesquisar">
+            </form>
+        </div>
+</div>

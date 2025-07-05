@@ -1,0 +1,37 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    margin-top: 13px;
+    justify-content: space-between;
+    height: 50px;
+}
+
+.bar{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    justify-content: space-between;
+    height: 30px;
+}
+
+.nova-publi{
+    padding: 8px 15px;
+    background-color: rgba(65, 91, 235);
+    color: white;
+    border: none;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+}
+
+.nova-publi:hover{
+    cursor: pointer;
+    background-color: rgb(41, 72, 250);
+}

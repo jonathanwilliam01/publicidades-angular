@@ -1,0 +1,93 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.card-ativos, .cards-inativos{
+    width: 96.5%;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 1px 2px 10px #a5a5a5;
+    height: 130px;
+    margin-top: 10px;
+}
+
+.top-cards{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.right-titulo-card{
+    display: flex; 
+    align-items: center;
+    position: relative
+}
+
+.options-menu{
+    list-style:none;
+    padding:6px 0;
+    margin:0;
+    width:130px;
+    background:#fff;
+    border:1px solid #d6d6d6;
+    border-radius:6px;
+    box-shadow:0 2px 8px rgba(0,0,0,.18);
+    position:absolute;
+    top:calc(100% + 6px); 
+    right:0;              
+    display:none;         
+    z-index:1000;
+}
+
+.options-menu li{
+    padding:9px 14px;
+    cursor:pointer;
+    font-size:14px;
+}
+
+li{
+    display: flex;
+    align-items: center;
+}
+
+.options-menu li:hover{
+    background:#f2f2f2;
+}
+
+.publi-atual{
+    background-color: rgb(141, 219, 141);
+    color: rgb(2, 95, 2);
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.img-card{
+    height:80px; 
+    width:100px;
+    padding: 10px 8px 5px 10px;
+    border-radius:12px;
+}
+
+.bottom-card{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.tag-est{
+    margin-left: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 3px;
+    margin-bottom: 5px;
+}
+
+.outras-publi{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 100%;
+}
