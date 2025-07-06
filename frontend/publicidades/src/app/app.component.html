@@ -1,3 +1,11 @@
-<app-header></app-header>
+<app-header (componentSelected)="setComponent($event)"></app-header>
 
-<app-content></app-content>
+<app-content (componentSelected)="setComponent($event)"></app-content>
+
+<ng-container *ngIf="currentComponent === 'NovaPubli'">
+  <app-nova-publicidade></app-nova-publicidade>
+</ng-container>
+
+<ng-container *ngIf="currentComponent === 'EditPubli'">
+  <app-editar-publicidade></app-editar-publicidade>
+</ng-container>

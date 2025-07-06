@@ -10,19 +10,18 @@
                             <p><b> Titulo </b></p>
                             <div class="right-titulo-card">
                                 <button class='publi-atual'>Publicidade Atual</button>
-                                <span class="material-symbols-outlined more-btn">more_vert</span>
+                            
+                                <i class="pi pi-ellipsis-v" style="cursor:pointer;" (click)="menuAberto = !menuAberto"></i>
 
-                                <ul class="options-menu">
-                                    <a href="" style="all:unset;cursor:pointer;">
-                                        <li class="op-editar"> <span class="material-symbols-outlined" style="margin-right: 8px; font-size:20px">edit</span>Editar</li>
-                                    </a>
-                                    <form method="POST"> 
-                                            <input type="hidden" name="id_encerrar" value="1">
-                                            <button type="submit" name="encerrar" style="all:unset; cursor:pointer;">
-                                            <li class="op-excluir" style="color:red"><span class="material-symbols-outlined" style="margin-right: 8px; font-size:20px">cancel</span>Encerrar</li>
-                                        </button>
-                                    </form> 
+                                <ul *ngIf="menuAberto" class="options-menu" style="position: absolute; right: 0; background: white; border: 1px solid #ccc; padding: 8px; border-radius: 6px;">
+                                  <li style="cursor:pointer;" (click)="selectComponent('EditPubli')">
+                                    <i class="pi pi-pencil" style="margin-right: 5px;"></i>Editar
+                                  </li>
+                                  <li (click)="encerrar()" style="color:red; cursor:pointer;">
+                                    <i class="pi pi-times-circle" style="margin-right: 5px;"></i>Encerrar
+                                  </li>
                                 </ul>
+
                             </div>
                         </div>
                         <p> Descrição </p>
@@ -36,7 +35,9 @@
                         <h5 class='tag-est'> Rio de Janeiro </h5>
                     </div>
                     <div class="validade">
-                        <P class="card-validade" style="display: flex; align-items: center; margin-right:15px"> Ativo até 31/07/2025</P>
+                        <P class="card-validade" style="display: flex; align-items: center; margin-right:15px"> 
+                            <i class="pi pi-calendar" style="margin-right: 5px;"></i>
+                            Ativo até 31/07/2025</P>
                     </div>
                 </div>
             </div>
@@ -55,18 +56,15 @@
                         <div class="titulo-edit-card" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
                             <p><b> Titulo </b></p>
                             <div class="right-titulo-card">
-                                <span class="material-symbols-outlined more-btn">more_vert</span>
+                                <i class="pi pi-ellipsis-v" style="cursor:pointer;" (click)="menuAberto = !menuAberto"></i>
 
-                                <ul class="options-menu">
-                                    <a href="" style="all:unset;cursor:pointer;">
-                                        <li class="op-editar"> <span class="material-symbols-outlined" style="margin-right: 8px; font-size:20px">edit</span>Editar</li>
-                                    </a>
-                                    <form method="POST"> 
-                                            <input type="hidden" name="id_reativar" value="1">
-                                            <button type="submit" name="reativar" style="all:unset; cursor:pointer;">
-                                            <li class="op-reativar" style="color:green"><span class="material-symbols-outlined" style="margin-right: 8px; font-size:20px">check</span>Reativar</li>
-                                        </button>
-                                    </form> 
+                                <ul *ngIf="menuAberto" class="options-menu" style="position: absolute; right: 0; background: white; border: 1px solid #ccc; padding: 8px; border-radius: 6px;">
+                                  <li style="cursor:pointer;" (click)="selectComponent('EditPubli')">
+                                    <i class="pi pi-pencil" style="margin-right: 5px;"></i>Editar
+                                  </li>
+                                  <li (click)="encerrar()" style="color:red; cursor:pointer;">
+                                    <i class="pi pi-times-circle" style="margin-right: 5px;"></i>Encerrar
+                                  </li>
                                 </ul>
                             </div>
                         </div>
@@ -81,7 +79,9 @@
                         <h5 class='tag-est'> Rio de Janeiro </h5>
                     </div>
                     <div class="validade">
-                        <P class="card-validade" style="display: flex; align-items: center; margin-right:15px">Vencida em 01/07/2025</P>
+                        <P class="card-validade" style="display: flex; align-items: center; margin-right:15px">
+                            <i class="pi pi-calendar" style="margin-right: 5px;"></i>
+                            Vencida em 01/07/2025</P>
                     </div>
                 </div>
             </div>

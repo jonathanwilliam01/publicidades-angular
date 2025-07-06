@@ -1,0 +1,65 @@
+<div class="edit-publicidade" *ngIf="currentComponent === 'EditPubli'">
+    <form method="POST" action="" enctype="multipart/form-data">
+        <div class="titulo-form">
+            <h3> Editar publicidade</h3>
+            <i class="pi pi-times" style="margin-right: 15px; cursor: pointer;" onclick="location.href=''"></i>
+        </div>
+
+        <div class="form-campos1">
+                <label>Estado contemplados*
+                  <div class="estados">
+                    <label> São Paulo
+                        <input type="hidden" name="sp" value="0">
+                        <input type="checkbox" name="sp" value="1">
+                    </label>
+                    <label> Rio de Janeiro
+                        <input type="hidden" name="rj" value="0">
+                        <input type="checkbox" name="rj" value="1">
+                    </label>
+                    <label> Minas Gerais
+                        <input type="hidden" name="mg" value="0">
+                        <input type="checkbox" name="mg" value="1">
+                    </label>
+                  </div>
+                </label>
+
+            <label>Titulo*
+                <input type="text" name="titulo" required>
+            </label>
+
+            <label>Descrição*
+                <input type="text" name="descricao" required>
+            </label>
+        </div>
+
+        <div class="form-campos2">
+            <label>Titulo do Botão*
+                <input type="text" name="tit-botao" required>
+            </label>
+
+            <label>Link do Botão*
+                <input type="text" name="link-botao" required>
+            </label>
+
+            <label>Data de Publicação*
+                <input type="date" name="dt-ini-publi" required>
+            </label>
+
+            <label>Data Final da Publicação*
+                <input type="date" name="dt-fim-publi" required>
+            </label>
+        </div>
+
+        <div class="form-img">
+            <label style="margin-left: 20px;">IMAGEM DA PUBLICIDADE*
+                <input type="file" name="img-publi" id="img-publi" class="img-publicidade" accept="image/*" required>
+                <img id="preview-img" style="display:none; margin-top:8px; width:100px; height:100px; border-radius:6px;">
+            </label>
+        </div>
+
+        <div class="form-buttons">
+            <button type="button" id="cancelar" onclick="location.href='';" style="border:1px solid rgb(73, 73, 73); color: rgb(73, 73, 73);"><i class="pi pi-times" style="margin-right: 5px;"></i>Cancelar</button>
+            <button type="submit" class="confirm" name="confirmar" value = "Confirmar" style="background-color: rgb(65, 91, 235); color: white;"><i class="pi pi-check" style="margin-right: 5px;"></i>Confirmar</button>
+        </div>
+    </form>
+</div>
