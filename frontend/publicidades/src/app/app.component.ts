@@ -6,11 +6,12 @@ import { NovaPublicidadeComponent } from './nova-publicidade/nova-publicidade.co
 import { ButtonModule } from 'primeng/button';
 import { CommonModule } from '@angular/common';
 import { EditarPublicidadeComponent } from './editar-publicidade/editar-publicidade.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, ContentComponent, NovaPublicidadeComponent, EditarPublicidadeComponent, ButtonModule, CommonModule],
+  imports: [HeaderComponent, ContentComponent, NovaPublicidadeComponent, EditarPublicidadeComponent, ButtonModule, CommonModule, HttpClientModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -22,4 +23,6 @@ export class AppComponent {
   setComponent(componentName: string) {
     this.currentComponent = componentName;
   }
+
+  
 }

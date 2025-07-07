@@ -1,52 +1,101 @@
 <div class="content">
 <!-- PUBLICIDADES ATIVAS -->
-            <div class="card-ativos">
-                <div class="top-cards">
-                    <div class="card-img">
-                        <img class="img-card" src="">
-                    </div>
-                    <div class="card-text" style="width: 91%;">
-                        <div class="titulo-edit-card" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-                            <p><b> Titulo </b></p>
-                            <div class="right-titulo-card">
-                                <button class='publi-atual'>Publicidade Atual</button>
-                            
-                                <i class="pi pi-ellipsis-v" style="cursor:pointer;" (click)="menuAberto = !menuAberto"></i>
+<div class="card-ativos" *ngFor="let publi of publicidades$ | async; index as i">
+    <div class="top-cards">
+      <div class="card-img">
+        <img class="img-card">
+        <!-- [src]="publi.imagem || 'assets/placeholder.png'"[alt]="publi.titulo"-->
+      </div>
 
-                                <ul *ngIf="menuAberto" class="options-menu" style="position: absolute; right: 0; background: white; border: 1px solid #ccc; padding: 8px; border-radius: 6px;">
-                                  <li style="cursor:pointer;" (click)="selectComponent('EditPubli')">
-                                    <i class="pi pi-pencil" style="margin-right: 5px;"></i>Editar
-                                  </li>
-                                  <li (click)="encerrar()" style="color:red; cursor:pointer;">
-                                    <i class="pi pi-times-circle" style="margin-right: 5px;"></i>Encerrar
-                                  </li>
-                                </ul>
+      <div class="card-text" style="width: 91%">
+        <div class="titulo-edit-card" style=" display: flex; justify-content: space-between; align-items: center;margin-bottom: 3px;">
+          <p><b>{{ publi.titulo }}</b></p>
+          <div class="right-titulo-card">
+            <button [ngClass]="{ 'publi-atual': publi.validade === 'valida', 'publi-vencida': publi.validade === 'vencida'}">
+              {{
+                publi.validade === 'valida'
+                  ? 'Publicidade Atual'
+                  : 'Publicidade Encerrada'
+              }}
+            </button>
 
-                            </div>
-                        </div>
-                        <p> Descrição </p>
-                    </div>    
-                </div>
+            <i
+              class="pi pi-ellipsis-v"
+              style="cursor: pointer"
+              (click)="toggleMenu(i)"
+            ></i>
 
-                <div class="bottom-card">
-                    <div class="tags-estado" style="display: flex; align-items: center;">
-                        <h5 class='tag-est'> São Paulo </h5>
-                        <h5 class='tag-est'> Minas Gerais </h5>
-                        <h5 class='tag-est'> Rio de Janeiro </h5>
-                    </div>
-                    <div class="validade">
-                        <P class="card-validade" style="display: flex; align-items: center; margin-right:15px"> 
-                            <i class="pi pi-calendar" style="margin-right: 5px;"></i>
-                            Ativo até 31/07/2025</P>
-                    </div>
-                </div>
-            </div>
+            <ul
+              *ngIf="menuAberto === i"
+              class="options-menu"
+              style="
+                position: absolute;
+                right: 0;
+                background: white;
+                border: 1px solid #ccc;
+                padding: 8px;
+                border-radius: 6px;
+              "
+            >
+              <li
+                style="cursor: pointer"
+                (click)="editar(publi.id)"
+              >
+                <i class="pi pi-pencil" style="margin-right: 5px"></i>Editar
+              </li>
+              <li
+                style="cursor: pointer; color: red"
+                (click)="encerrar(publi.id)"
+              >
+                <i
+                  class="pi pi-times-circle"
+                  style="margin-right: 5px"
+                ></i
+                >Encerrar
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <p>{{ publi.descricao }}</p>
+      </div>
+    </div>
+
+    <div
+      class="bottom-card"
+      style="
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      "
+    >
+
+      <div
+        class="tags-estado"
+        style="display: flex; align-items: center; flex-wrap: wrap"
+      >
+        <h5 class="tag-est" *ngIf="publi.sp_estado">São Paulo</h5>
+        <h5 class="tag-est" *ngIf="publi.mg_estado">Minas Gerais</h5>
+        <h5 class="tag-est" *ngIf="publi.rj_estado">Rio de Janeiro</h5>
+      </div>
+
+      <div class="validade">
+        <p
+          class="card-validade"
+          style="display: flex; align-items: center; margin-right: 15px"
+        >
+          <i class="pi pi-calendar" style="margin-right: 5px"></i>
+          Ativo até {{ publi.dt_fim }}
+        </p>
+      </div>
+    </div>
+  </div>
     
     <div class="outras-publi">
         <h2 style="margin-left:30px; font-size: 15px; margin-top: 20px;">OUTRAS PUBLICIDADES</h2>
     </div>
 
-<!-- PUBLICIDADES INATIVAS -->
+<!-- PUBLICIDADES INATIVAS
             <div class="cards-inativos">
                 <div class="top-cards">
                     <div class="card-img">
@@ -86,4 +135,4 @@
                 </div>
             </div>
             <div class="footer" style="height: 30px;"></div>
-        </div>
+        </div> -->
