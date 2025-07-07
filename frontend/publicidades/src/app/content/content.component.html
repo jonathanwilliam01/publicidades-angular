@@ -3,8 +3,7 @@
 <div class="card-ativos" *ngFor="let publi of publicidades$ | async; index as i">
     <div class="top-cards">
       <div class="card-img">
-        <img class="img-card">
-        <!-- [src]="publi.imagem || 'assets/placeholder.png'"[alt]="publi.titulo"-->
+        <img class="img-card" [src]="'http://localhost:8080/uploads/' + publi.imagem">
       </div>
 
       <div class="card-text" style="width: 91%">
